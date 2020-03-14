@@ -22,52 +22,34 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program. If not, see <http://www.gnu.org/licenses/>. 
-   SPDX-License-Identifier: GPL-3.0-or-later */
+   along with this program. If not, see <http://www.gnu.org/licenses/>. */
 
 #include "support.h"
-
-extern void elaborateinit(void);
-extern void elaboratefinal(void);
-extern int fac (int);
 
 /* This scale factor will be changed to equalise the runtime of the
    benchmarks. */
 #define SCALE_FACTOR    (REPEAT_FACTOR >> 0)
 
-// int fac (int n)
-// {
-//   if (n == 0)
-//      return 1;
-//   else
-//      return (n * fac (n-1));
-// }
-
+extern int fac (int);
 
 void
 initialise_benchmark (void)
 {
 }
 
+
 int
-benchmark()
+benchmark (void)
 {
   int i;
   volatile int s = 0;
   volatile int n;
 
   n = 10;
-
-  elaborateinit();
-
   for (i = 0;  i <= n; i++)
       s += fac (i);
-  
-  elaboratefinal();
-
-   return s;
+  return s;
 }
-
 
 int verify_benchmark(int r)
 {
