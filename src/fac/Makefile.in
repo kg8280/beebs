@@ -796,7 +796,7 @@ uninstall-am: uninstall-binPROGRAMS
 
 @ENABLED_BENCHMARK_FAC_TRUE@clean-local:
 @ENABLED_BENCHMARK_FAC_TRUE@	-rm -rf libfac_ada.la
-@ENABLED_BENCHMARK_FAC_TRUE@	-gprclean -Pada_project
+@ENABLED_BENCHMARK_FAC_TRUE@	-gprclean -q -Pada_project
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

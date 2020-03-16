@@ -68,6 +68,6 @@ endif
 
 clean-local:
 	-rm -rf libfac_ada.la
-	-gprclean -Pada_project
+	-gprclean -q -Pada_project
 
 endif
